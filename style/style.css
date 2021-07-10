@@ -40,3 +40,11 @@ main {
     border-radius: 3%;
     opacity: 1;
 }
+
+.flip {
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: fixed;
+}
