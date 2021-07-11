@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
@@ -13,22 +14,19 @@ main {
 }
 
 .sideways {
-    background: white;
-    min-height: 80vh;
-    position: fixed;
-    background: linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    border-radius: 3%;
-    width: 60%;
+    min-height: 90vh;
+    width: 75%;
     display: flex;
     align-items: center;
+    opacity: 0;
+}
+
+.pages {
+    position: fixed;
 }
 
 .page {
-    padding: 1%;
-    background: rgba(255, 255, 255, 0.3);
-    min-height: 70vh;
-    width: 50%;
-    border-radius: 2%;
+    padding: 3%;
 }
 
 .card {
@@ -38,13 +36,373 @@ main {
     transition: transform 1s ease;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
     border-radius: 3%;
-    opacity: 1;
+    opacity: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.flip {
-    z-index: 10;
-    width: 100px;
-    height: 100px;
-    background: red;
+.card2 {
+    padding: 1rem;
     position: fixed;
+    min-width: 60vh;
+    min-height: 40vh;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    opacity: 1;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+    border-radius: 3%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardBox {
+    position: fixed;
+    min-width: 60vh;
+    min-height: 40vh;
+    z-index: 11;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front .logo {
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.8;
+}
+
+.card-front p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 1rem;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    display: flex;
+    flex-direction: column;
+    background: rgb(22, 22, 22);
+    border-radius: 3%;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.card-back p {
+    color: rgba(223, 245, 252, 0.9);
+}
+
+.card-back .backBottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
+    background: rgba(162, 233, 255, 0.9);
+}
+
+.card-back .backBottom ul {
+    list-style: none;
+}
+
+.card-back .backTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.card-back .function p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card-back .backTop .about {
+    flex: 1;
+    margin: 0;
+    padding: 1rem;
+    border-right: 0.1rem solid rgba(223, 245, 252, 0.9);
+}
+
+.card-back .backTop .about p {
+    font-size: 1rem;
+}
+
+.card-back .backTop .class {
+    flex: 1;
+    padding: 1rem;
+}
+
+.cardBox:hover .card2 {
+    transform: rotateY(180deg);
+}
+
+.cardBox .card2 .card-back {
+    transform: rotateY(180deg);
+}
+
+.pageContainer {
+    display: flex;
+}
+
+.pageContainer2 {
+    flex: 1;
+    width: 50%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+    border-radius: 3%;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.image img {
+    width: 22rem;
+}
+
+.image2 img {
+    position: relative;
+    width: 21rem;
+    bottom: 0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.about ul {
+    margin-left: 2rem;
+}
+
+.skill {
+    margin: 1rem;
+}
+
+.progressDaw {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressDaw::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 90%;
+}
+
+.progressPs {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressPs::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 85%;
+}
+
+.progressPr {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressPr::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 80%;
+}
+
+.progressIll {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressIll::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 50%;
+}
+
+.progressJvn {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressJvn::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 75%;
+}
+
+.progressJS {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressJS::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 25%;
+}
+
+.progressPhp {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressPhp::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 65%;
+}
+
+.progressC {
+    position: relative;
+    background: linear-gradient(to left, rgb(94, 66, 255), rgb(87, 252, 161));
+    width: 100%;
+    height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progressC::after {
+    content: "";
+    width: 100%;
+    height: 1rem;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 70%;
+}
+
+.page3Contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc {
+    font-size: 2rem;
+    flex: 1;
+    margin: 1rem;
+    margin-left: 7rem;
+}
+
+.text {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting {
+    margin-bottom: 5rem;
+}
+
+.greeting h3 {
+    font-size: 3rem;
+}
+
+.greeting h1 {
+    font-size: 4rem;
+}
+
+.greeting p {
+    font-size: 1rem;
+}
+
+.image {
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+.achievement ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement ul li {
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+.page2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.page2Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
