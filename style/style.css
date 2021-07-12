@@ -420,3 +420,32 @@ ul {
     top: 50%;
     z-index: 20;
 }
+
+.contactContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    margin: 2rem;
+}
+
+.contactContainer ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contactContainer ul a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.icon {
+    width: 5vh;
+    margin: 1rem;
+}
+
+.instructions {
+    position: fixed;
+    left: 10;
+    top: 0;
+}
