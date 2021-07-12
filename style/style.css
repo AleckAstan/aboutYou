@@ -27,6 +27,7 @@ main {
 
 .page {
     padding: 3%;
+    margin-top: 3rem;
 }
 
 .card {
@@ -173,19 +174,18 @@ main {
 }
 
 .image img {
-    width: 22rem;
+    width: 20.5rem;
 }
 
 .image2 img {
     position: relative;
-    width: 21rem;
-    bottom: 0;
+    width: 20.5rem;
 }
 
 .about {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .about ul {
@@ -405,4 +405,18 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.page-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 20;
+}
+
+.page-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 20;
 }
