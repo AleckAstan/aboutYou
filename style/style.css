@@ -412,6 +412,7 @@ ul {
     left: 0;
     top: 50%;
     z-index: 20;
+    opacity: 0.5;
 }
 
 .page-right {
@@ -419,6 +420,7 @@ ul {
     right: 0;
     top: 50%;
     z-index: 20;
+    opacity: 0.5;
 }
 
 .contactContainer {
